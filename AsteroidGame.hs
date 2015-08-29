@@ -1,6 +1,6 @@
 {-# LANGUAGE ScopedTypeVariables, FlexibleInstances #-} -- allows "forall t. NetworkDescription t"
 
-module AsteroidGame (main) where
+module Main where
 
 import Control.Monad (when)
 import Data.Maybe (isJust, fromJust)
