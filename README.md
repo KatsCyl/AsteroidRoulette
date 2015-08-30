@@ -2,7 +2,7 @@ AsteroidRoulette
 ================
 
 This is a simple little command line game based off of
-the game played in the book "Gobsmacking Galaxy"
+the game played in the book "Gobsmacking Galaxy (The Knowledge)" by Kjartan Poskitt.
 
 Rules of the game:
 ------------------
