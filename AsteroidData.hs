@@ -43,15 +43,15 @@ updateShipA as s = if shields s then
                     else
                       kill s
                     where
-                      deShield (Ship p _ st tl d) = Ship p False st tl d
-                      gNull (Ship _ sh st tl d) = Ship 0 sh st tl d
-                      gTele (Ship p sh st _ d) = Ship p sh st True d
-                      gStuck (Ship p sh _ tl d) = Ship p sh True tl d
-                      kill (Ship p sh st tl _) = Ship p sh st tl True
+                      deShield s = s {shields = False}
+                      gNull s = s {pos = 0}
+                      gTele s = s {tele = True}
+                      gStuck s = s {stuck = True}
+                      kill s = s {dead = True}
 
 updateShipM :: Int -> Ship -> Ship
 updateShipM m s = if tele s then
-                    mShip m s
+                    tShip m s
                   else
                     if stuck s then
                       if m == 5 then
@@ -64,9 +64,9 @@ updateShipM m s = if tele s then
                       else
                         s
                   where
-                    mShip p (Ship _ sh st _ d) = Ship p sh st False d
-                    dStuck (Ship p sh _ tl d) = Ship p sh False tl d
-                    next (Ship p sh st tl d) = Ship (p + 1) sh st tl d
+                    tShip p s = s { pos = p, tele = False}
+                    dStuck s = s {stuck = False}
+                    next s = s { pos = pos s + 1}
 
                       
 
