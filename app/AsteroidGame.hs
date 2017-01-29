@@ -51,7 +51,7 @@ setupNetwork :: forall t. Frameworks t =>
     EventSource () -> Moment t ()
 setupNetwork esroll = do
     initialStdGen <- liftIO $ newStdGen
-    eroll <- fromAddHandler $ addHandler esroll 
+    eroll <- fromAddHandler $ addHandler esroll
 
     let
       -- Behavior and event for the random number generator.
